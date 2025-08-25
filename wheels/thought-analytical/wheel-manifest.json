@@ -1,0 +1,9 @@
+{
+"wheelId":"wheel:thought-analytical@dev",
+"name":"Thought Analytical Wheel",
+"cogs":[
+"cog:agent:model/slot:gemini@2.5",
+"cog:tool:web_search/slot:tavily@v1.0.0",
+"cog:service:grounding/slot:main@stable"
+]
+}

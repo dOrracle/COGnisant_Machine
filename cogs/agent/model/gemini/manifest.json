@@ -1,0 +1,20 @@
+{
+"cogId":"cog:agent:model/slot:gemini@2.5",
+"alias":"agent/gemini@2.5",
+"name":"Gemini Agent (2.5)",
+"description":"Analytical LLM agent (shadow manifest)",
+"type":"agent",
+"category":"model",
+"slot":"gemini",
+"version":"2.5",
+"trustLevel":"internal",
+"capabilities":["generate","summarize"],
+"allowedTools":["tool:web_search/tavily","service:grounding/main"],
+"sideEffects":{"dbWrites":false,"network":true},
+"implementationBindings":[
+{"id":"impl-gemini-2.5-http","type":"http","url":"http://localhost:5001/execute","auth":"none","tags":["dev"]}
+],
+"runtimePolicies":{"sandbox":true,"cpuLimit":"1","memLimit":"512Mi"},
+"ioContract":{"inputSchema":{"type":"object","required":["task","context"]},"outputSchema":{"type":"object","required":["result","usedEvidenceIds"]}},
+"schemaTemplateMeta":{"language":"cypher"}
+}

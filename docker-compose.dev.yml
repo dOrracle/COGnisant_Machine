@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+orchestrator:
+build: .
+command: node src/core/server.js
+volumes:
+- ./:/app
+environment:
+- NODE_ENV=development
+ports:
+- "3000:3000"
+mock-tavily:
+build: .
+command: node src/services/mock-tavily.js
+ports:
+- "4001:4001"
